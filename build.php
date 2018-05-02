@@ -17,8 +17,8 @@ return [
     'admin'     => [
         '__file__'   => ['common.php'],
         '__dir__'    => ['behavior', 'controller', 'model', 'view'],
-        'controller' => ['Index', 'Kindergarten', 'PlayGround'],
-        'model'      => ['Kindergarten', 'PlayGround'],
+        'controller' => ['Index', 'Kindergarten', 'PlayGround','Gallery'],
+        'model'      => ['Kindergarten', 'PlayGround','Gallery'],
         'view'       => ['index/index'],
     ],
     // 其他更多的模块定义
