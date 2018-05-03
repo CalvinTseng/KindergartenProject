@@ -4,7 +4,7 @@
     	<meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	    <title>Proton - Admin Template</title>		
+	    <title>幼儿园信息</title>		
 		
 		<!-- Import google fonts - Heading first/ text second -->
         <!-- <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' /> -->
@@ -65,46 +65,26 @@
 							<table class="table">
 								  <thead>
 									  <tr>
-										  <th>Employe</th>
-                                          <th>Position</th>
-                                          <th>Salary</th>
-										  <th>Status</th>                                          
+										  <th>幼儿园名称</th>
+                                          <th>公立或私立</th>
+                                          <th>介绍</th>
+										  <th>操作</th>                                          
 									  </tr>
+									  
+									  
+									  
 								  </thead>   
+								  {volist name="kinder" id="vo"}
 								  <tbody>
 									<tr>
-										<td>Willson</td>
-                                        <td>Developer</td>
-                                        <td>2563$</td>
-										<td>
-											<span class="label label-success">Active</span>
-										</td>                                       
-									</tr>
-									<tr>
-										<td>James</td>
-                                        <td>SEO</td>
-                                        <td>5000$</td>
-										<td>
-											<span class="label label-danger">Banned</span>
-										</td>                                       
-									</tr>
-									<tr>
-										<td>Steven</td>
-                                        <td>Photographer</td>
-                                        <td>1269$</td>
-										<td>
-											<span class="label label-default">Inactive</span>
-										</td>                                        
-									</tr>
-									<tr>
-										<td>Aselay</td>
-                                        <td>Project manger</td>
-                                        <td>6253$</td>
-										<td>
-											<span class="label label-warning">Pending</span>
-										</td>                                       
+										<td>{$vo.kname}</td>
+                                        <td>{if condition="$vo.type==1"}公立{else /}私立{/if}</td>
+                                        <td><img src="_STATIC_/admin/images/{$vo.kpic}" style="width:100px ;"></td>
+                                        <td>修改 删除</td>
+										                                     
 									</tr>									                                  
 								  </tbody>
+								  {/volist}
 							 </table>  
 							 <ul class="pagination">
 								<li><a href="table.html#">Prev</a></li>
