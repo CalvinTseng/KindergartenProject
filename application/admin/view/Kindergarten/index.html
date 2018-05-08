@@ -81,7 +81,18 @@
                                         <td>{if condition="$vo.type==1"}公立{else /}私立{/if}</td>
                                         <td>{$vo.kintro}</td>
                                         <!--<td><img src="_STATIC_/admin/images/{$vo.kpic}" style="width:100px ;"></td>-->
-                                        <td>修改 删除</td>
+                                        <td>
+                                        	<div class="btn-group">
+                                        		<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+                                        			操作
+                                        			<span class="caret"></span>
+                                        		</a>
+                                        		<ul class="dropdown-menu pull-right">
+                                        			<li><a href="#"><i class="icon-edit"></i>修改</a></li>
+                                        			<li><a href="{:url('delete',array('id'=>$vo.kid))}"><i class="icon-trash"></i>删除</a></li>
+                                        		</ul>
+                                        	</div>
+                                        </td>
 										                                     
 									</tr>									                                  
 								  </tbody>
