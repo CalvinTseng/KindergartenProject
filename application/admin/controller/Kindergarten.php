@@ -11,6 +11,8 @@ class Kindergarten extends Controller
 		# code...
 		$kinder=Db::query('select * from 幼儿园信息');
 		$this->assign("kinder",$kinder);
+		$play=Db::query('select * from 游乐场信息');
+		$this->assign("play",$play);
         return $this->fetch();
 	}
 	public function delete($id)
