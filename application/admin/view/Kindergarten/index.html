@@ -56,7 +56,6 @@
 						<div class="panel-heading">
 							<h2><i class="fa fa-table red"></i><span class="break"></span><strong>幼儿园</strong></h2>
 							<div class="panel-actions">
-								<a href="table.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
 								<a href="table.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
 								<a href="table.html#" class="btn-close"><i class="fa fa-times"></i></a>
 							</div>
@@ -89,7 +88,7 @@
                                         		</a>
                                         		<ul class="dropdown-menu pull-right">
                                         			<li><a href="#"><i class="icon-edit"></i>修改</a></li>
-                                        			<li><a href="{:url('delete',array('id'=>$vo.kid))}"><i class="icon-trash"></i>删除</a></li>
+                                        			<li><a href="{:url('deletekinder',array('id'=>$vo.kid))}"><i class="icon-trash"></i>删除</a></li>
                                         		</ul>
                                         	</div>
                                         </td>
@@ -116,7 +115,7 @@
 				<div class="col-lg-6">
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h2><i class="fa fa-table red"></i><span class="break"></span><strong>Striped Table</strong></h2>
+							<h2><i class="fa fa-table red"></i><span class="break"></span><strong>游乐场</strong></h2>
 							<div class="panel-actions">
 								<a href="table.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
 								<a href="table.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
@@ -127,46 +126,32 @@
 							<table class="table table-striped">
 								  <thead>
 									  <tr>
-										  <th>Employe</th>
-                                          <th>Position</th>
-                                          <th>Salary</th>
-										  <th>Status</th>                                          
+										  <th>游乐场名称</th>
+                                          <th>游乐场介绍</th>
+                                          <th>热度</th>
+										  <th>操作</th>
 									  </tr>
-								  </thead>   
+								  </thead>
+								  {volist name="play" id="vo"}
 								  <tbody>
 									<tr>
-										<td>Willson</td>
-                                        <td>Developer</td>
-                                        <td>2563$</td>
-										<td>
-											<span class="label label-success">Active</span>
-										</td>                                       
+										<td>{$vo.pname}</td>
+                                        <td>{$vo.pintro}</td>
+                                        <td>{$vo.hittimes}</td>
+										<td><div class="btn-group">
+                                        		<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+                                        			操作
+                                        			<span class="caret"></span>
+                                        		</a>
+                                        		<ul class="dropdown-menu pull-right">
+                                        			<li><a href="#"><i class="icon-edit"></i>修改</a></li>
+                                        			<li><a href="{:url('deleteplay',array('id'=>$vo.pid))}"><i class="icon-trash"></i>删除</a></li>
+                                        		</ul>
+                                        	</div></td>
 									</tr>
-									<tr>
-										<td>James</td>
-                                        <td>SEO</td>
-                                        <td>5000$</td>
-										<td>
-											<span class="label label-danger">Banned</span>
-										</td>                                       
-									</tr>
-									<tr>
-										<td>Steven</td>
-                                        <td>Photographer</td>
-                                        <td>1269$</td>
-										<td>
-											<span class="label label-default">Inactive</span>
-										</td>                                        
-									</tr>
-									<tr>
-										<td>Aselay</td>
-                                        <td>Project manger</td>
-                                        <td>6253$</td>
-										<td>
-											<span class="label label-warning">Pending</span>
-										</td>                                       
-									</tr>									                                  
+									                            
 								  </tbody>
+								  {/volist}
 							 </table>  
 							 <ul class="pagination">
 								<li><a href="table.html#">Prev</a></li>
@@ -184,147 +169,9 @@
 				</div><!--/col-->
 			</div><!--/row-->
 			
-			<div class="row">
-				
-				<div class="col-lg-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h2><i class="fa fa-table red"></i><span class="break"></span><strong>Condensed Table</strong></h2>
-							<div class="panel-actions">
-								<a href="table.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-								<a href="table.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-								<a href="table.html#" class="btn-close"><i class="fa fa-times"></i></a>
-							</div>
-						</div>
-						<div class="panel-body">
-							<table class="table table-condensed">
-								  <thead>
-									  <tr>
-										  <th>Employe</th>
-                                          <th>Position</th>
-                                          <th>Salary</th>
-										  <th>Status</th>                                          
-									  </tr>
-								  </thead>   
-								  <tbody>									
-									<tr>
-										<td>Willson</td>
-                                        <td>Developer</td>
-                                        <td>2563$</td>
-										<td>
-											<span class="label label-danger">Banned</span>
-										</td>                                       
-									</tr>
-									<tr>
-										<td>James</td>
-                                        <td>SEO</td>
-                                        <td>5000$</td>
-										<td>
-											<span class="label label-default">Inactive</span>
-										</td>                                        
-									</tr>
-									<tr>
-										<td>Steven</td>
-                                        <td>Photographer</td>
-                                        <td>1269$</td>
-										<td>
-											<span class="label label-warning">Pending</span>
-										</td>                                       
-									</tr>
-									<tr>
-										<td>Aselay</td>
-                                        <td>Project manger</td>
-                                        <td>6253$</td>
-										<td>
-											<span class="label label-success">Active</span>
-										</td>                                        
-									</tr>                                   
-								  </tbody>
-							 </table> 
-							<ul class="pagination">
-								<li><a href="table.html#">Prev</a></li>
-								<li class="active">
-								  <a href="table.html#">1</a>
-								</li>
-								<li><a href="table.html#">2</a></li>
-								<li><a href="table.html#">3</a></li>
-								<li><a href="table.html#">4</a></li>
-								<li><a href="table.html#">5</a></li>
-								<li><a href="table.html#">Next</a></li>
-							  </ul>     
-						</div>
-					</div>
-				</div><!--/col-->
+			
 					
-				<div class="col-lg-6">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h2><i class="fa fa-table red"></i><span class="break"></span><strong>Bordered Table</strong></h2>
-							<div class="panel-actions">
-								<a href="table.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
-								<a href="table.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-								<a href="table.html#" class="btn-close"><i class="fa fa-times"></i></a>
-							</div>
-						</div>
-						<div class="panel-body">
-							<table class="table table-bordered">
-								  <thead>
-									  <tr>
-										  <th>Employe</th>
-                                          <th>Position</th>
-                                          <th>Salary</th>
-										  <th>Status</th>                                          
-									  </tr>
-								  </thead>   
-								  <tbody>
-									<tr>
-										<td>Willson</td>
-                                        <td>Developer</td>
-                                        <td>2563$</td>
-										<td>
-											<span class="label label-success">Active</span>
-										</td>                                       
-									</tr>
-									<tr>
-										<td>James</td>
-                                        <td>SEO</td>
-                                        <td>5000$</td>
-										<td>
-											<span class="label label-danger">Banned</span>
-										</td>                                       
-									</tr>
-									<tr>
-										<td>Steven</td>
-                                        <td>Photographer</td>
-                                        <td>1269$</td>
-										<td>
-											<span class="label label-default">Inactive</span>
-										</td>                                        
-									</tr>
-									<tr>
-										<td>Aselay</td>
-                                        <td>Project manger</td>
-                                        <td>6253$</td>
-										<td>
-											<span class="label label-warning">Pending</span>
-										</td>                                       
-									</tr>									                                  
-								  </tbody>
-							 </table>  
-							 <ul class="pagination">
-								<li><a href="table.html#">Prev</a></li>
-								<li class="active">
-								  <a href="table.html#">1</a>
-								</li>
-								<li><a href="table.html#">2</a></li>
-								<li><a href="table.html#">3</a></li>
-								<li><a href="table.html#">4</a></li>
-								<li><a href="table.html#">5</a></li>
-								<li><a href="table.html#">Next</a></li>
-							 </ul>
-						</div>
-					</div>
-				</div><!--/col-->
+				
 			
 			</div><!--/row-->
 			
