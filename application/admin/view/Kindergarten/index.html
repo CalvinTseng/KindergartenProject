@@ -96,8 +96,9 @@
 									</tr>									                                  
 								  </tbody>
 								  {/volist}
-							 </table>  
-							 <ul class="pagination">
+							 </table>
+							 {$kinder->render()}  
+							 <!-- <ul class="pagination">
 								<li><a href="table.html#">Prev</a></li>
 								<li class="active">
 								  <a href="table.html#">1</a>
@@ -107,7 +108,7 @@
 								<li><a href="table.html#">4</a></li>
 								<li><a href="table.html#">5</a></li>
 								<li><a href="table.html#">Next</a></li>
-							  </ul>     
+							  </ul>      -->
 						</div>
 					</div>
 				</div><!--/col-->
@@ -153,7 +154,8 @@
 								  </tbody>
 								  {/volist}
 							 </table>  
-							 <ul class="pagination">
+							 {$play->render()} 
+							 <!-- <ul class="pagination">
 								<li><a href="table.html#">Prev</a></li>
 								<li class="active">
 								  <a href="table.html#">1</a>
@@ -163,7 +165,7 @@
 								<li><a href="table.html#">4</a></li>
 								<li><a href="table.html#">5</a></li>
 								<li><a href="table.html#">Next</a></li>
-							  </ul>     
+							  </ul>      -->
 						</div>
 					</div>
 				</div><!--/col-->

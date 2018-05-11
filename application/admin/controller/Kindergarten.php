@@ -9,9 +9,9 @@ class Kindergarten extends Controller
 	public function index()
 	{
 		# code...
-		$kinder=Db::query('select * from 幼儿园信息');
+		$kinder=Db::name('幼儿园信息')->paginate(5);
 		$this->assign("kinder",$kinder);
-		$play=Db::query('select * from 游乐场信息');
+		$play=Db::name('游乐场信息')->paginate(5);
 		$this->assign("play",$play);
         return $this->fetch();
 	}
