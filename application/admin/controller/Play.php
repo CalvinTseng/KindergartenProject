@@ -4,7 +4,7 @@ use \think\Controller;
 use \think\Db;
 
 
-class Play extends Controller
+class Play extends BaseController
 {
 	public function index()
 	{

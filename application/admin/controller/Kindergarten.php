@@ -4,7 +4,7 @@ use \think\Controller;
 use \think\Db;
 
 
-class Kindergarten extends Controller
+class Kindergarten extends BaseController
 {
 	public function index()
 	{
