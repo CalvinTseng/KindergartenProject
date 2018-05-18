@@ -13,7 +13,7 @@ class BaseController extends Controller
 	{
 		# code...
 		if(!Session::has('adminid')){
-			$this->error("请登录后访问");
+			$this->error("请登录后访问","index/index");
 }
 	}
 }
