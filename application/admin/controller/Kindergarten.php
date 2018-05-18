@@ -27,7 +27,9 @@ class Kindergarten extends BaseController
 	}
 	public function doAddKinder()
 	{
-		# code...
-		echo "1";
+		# code..
+		$newkinder=$_POST["content"];
+		dump($newkinder);
+
 	}
 }
