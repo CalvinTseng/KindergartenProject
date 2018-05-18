@@ -6,5 +6,21 @@
 </head>
 <body>
 开始你的表演,杨润鑫!
+<form action="{:url('doAddKinder')}" method="post">
+        <!-- 加载编辑器的容器 -->
+        <script id="container" name="content" type="text/plain">
+          
+        </script>
+        <input type="submit" value="提交">
+    </form>
+    <!-- 配置文件 -->
+    <script type="text/javascript" src="__STATIC__/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="__STATIC__/ueditor/ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var editor = UE.getEditor('container');
+    </script>
+
 </body>
 </html>

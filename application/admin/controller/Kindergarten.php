@@ -25,4 +25,9 @@ class Kindergarten extends BaseController
 	{
 		return $this->fetch('addKinder');
 	}
+	public function doAddKinder()
+	{
+		# code...
+		echo "1";
+	}
 }
