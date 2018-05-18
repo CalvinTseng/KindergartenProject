@@ -9,7 +9,7 @@ class Index EXTENDS Controller
 {
     public function index()
     {
-        Session::clear();
+        
         //方法里面的内容由接下来的视图层页面决定
         if(request()->isPost()){
         	//验证码
