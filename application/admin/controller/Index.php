@@ -19,17 +19,19 @@ class Index EXTENDS Controller
         	}else{
             $a=input('adminname');
             $p=input('password');
+            $t=input('type');
             $log=new Login;
             //返回值 1 2 3
         	//用户名是否存在
-            $result = $log->login($a,$p);
+            $result = $log->login($a,$p,$t);
             if($result==1){
                 echo "<script>alert('密码错误');</script>";
             }else if($result==2){
                 echo "<script>alert('用户不存在');</script>";
-            }else{
+            }else if($result==3){
             $this->redirect('kindergarten/index');
-            }        	
+            }else{
+                echo "<script>alert('幼儿园管理员');</script>";            }        	
         	}
         }
         return $this->fetch();
