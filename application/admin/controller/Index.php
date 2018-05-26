@@ -31,7 +31,8 @@ class Index EXTENDS Controller
             }else if($result==3){
             $this->redirect('kindergarten/index');
             }else{
-                echo "<script>alert('幼儿园管理员');</script>";            }        	
+                $this->redirect('KinderAdmin/index');
+                            }        	
         	}
         }
         return $this->fetch();

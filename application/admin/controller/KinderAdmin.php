@@ -3,9 +3,9 @@ namespace app\admin\controller;
 
 class KinderAdmin EXTENDS BaseController
 {
-	public function index($kid)
+	public function index()
 	{
 		# code...
-		this->fetch();
+		return	$this->fetch();
 	}
 }
