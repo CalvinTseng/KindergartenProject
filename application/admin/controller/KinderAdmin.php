@@ -10,7 +10,7 @@ class KinderAdmin EXTENDS BaseController
 	{
 		# code...
 		$kinder=Db::name("幼儿园信息")->where("kid",$kid)->select();
-		dump($kinder);
+//		dump($kinder);
 		$this->assign('kinderinfo',$kinder);
 		return	$this->fetch();
 	}

@@ -1,15 +1,137 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
 	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<!-- Import google fonts - Heading first/ text second -->
+	<!-- <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' /> -->
+	<!--[if lt IE 9]>
+	<link href="http://fonts.useso.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+	<link href="http://fonts.useso.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+	<link href="http://fonts.useso.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+	<link href="http://fonts.useso.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
+	<!-- Favicon and touch icons -->
+	<link rel="shortcut icon" href="__STATIC__/assets/ico/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<!-- Css files -->
+	<link href="__STATIC__/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="__STATIC__/assets/css/jquery.mmenu.css" rel="stylesheet">
+	<link href="__STATIC__/assets/css/font-awesome.min.css" rel="stylesheet">
+	<link href="__STATIC__/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+	<link href="__STATIC__/assets/css/style.min.css" rel="stylesheet">
+	<link href="__STATIC__/assets/css/add-ons.min.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<style>
+		th{
+			text-align: center;
+		}
+		td{
+			text-align: center;
+		}
+		div{
+			line-height: 120px;
+		}
+	</style>
 </head>
 <body>
-开始你的表演 杨润鑫!
-{volist name="kinderinfo" id="vo"}
-<div>
-	{$vo.kname}
+<div class="container">
+	{volist name="kinderinfo" id="vo"}
+	<div class="row" style="height: 120px">
+		<div class="col-md-3" style="text-align: center;border: 5px solid forestgreen;">
+			幼儿园名字
+		</div>
+		<div class="col-md-7" style="text-align: center;border-bottom: 5px solid forestgreen;border-right: 5px solid forestgreen;border-top: 5px solid forestgreen">
+			{$vo.kname}
+		</div>
+		<div class="col-md-2">
+			<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+				操作
+			</a>
+			<ul class="dropdown-menu pull-right">
+				<li><a href="#"><i class="icon-edit"></i>修改</a></li>
+				<li><a href="{:url('deletekinder',array('id'=>$vo.kid))}"><i class="icon-trash"></i>删除</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="row" style="height: 120px">
+		<div class="col-md-3" style="text-align: center;border-bottom: 5px solid forestgreen;border-left: 5px solid forestgreen;border-right: 5px solid forestgreen">
+			幼儿园类型
+		</div>
+		<div class="col-md-7" style="text-align: center;border-bottom: 5px solid forestgreen;border-right: 5px solid forestgreen">
+			{if condition="$vo.type==1"}公立{else /}私立{/if}
+		</div>
+	</div>
+	<div class="row" style="height: 120px">
+		<div class="col-md-3" style="text-align: center;border-bottom: 5px solid forestgreen;border-left: 5px solid forestgreen;border-right: 5px solid forestgreen">
+			招生条件
+		</div>
+		<div class="col-md-7" style="text-align: center;border-bottom: 5px solid forestgreen;border-right: 5px solid forestgreen">
+			{$vo.receive}
+		</div>
+	</div>
+	<div class="row" style="height: 120px">
+		<div class="col-md-3" style="text-align: center;border-bottom: 5px solid forestgreen;border-left: 5px solid forestgreen;border-right: 5px solid forestgreen">
+			幼儿园地址
+		</div>
+		<div class="col-md-7" style="text-align: center;border-bottom: 5px solid forestgreen;border-right: 5px solid forestgreen">
+			{$vo.address}
+		</div>
+	</div>
+	<div class="row" style="height: 120px">
+		<div class="col-md-3" style="text-align: center;border-bottom: 5px solid forestgreen;border-left: 5px solid forestgreen;border-right: 5px solid forestgreen">
+			简介
+		</div>
+		<div class="col-md-7" style="text-align: center;border-bottom: 5px solid forestgreen;border-right: 5px solid forestgreen">
+			{$vo.kintro}
+		</div>
+	</div>
+	{/volist}
+	<!--<table class="table table-danger">-->
+		<!--<thead>-->
+		<!--<tr>-->
+			<!--<th>幼儿园名字</th>-->
+			<!--<th>幼儿园类型</th>-->
+			<!--<th>幼儿园内容</th>-->
+			<!--<th>操作</th>-->
+		<!--</tr>-->
+		<!--</thead>-->
+		<!--{volist name="kinderinfo" id="vo"}-->
+		<!--<tbody>-->
+		<!--<tr>-->
+			<!--<td>{$vo.kname}</td>-->
+			<!--<td>{if condition="$vo.type==1"}公立{else /}私立{/if}</td>-->
+			<!--<td>{$vo.kintro}</td>-->
+			<!--<td>-->
+				<!--<div class="btn-group">-->
+					<!--<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">-->
+						<!--操作-->
+
+					<!--</a>-->
+					<!--<ul class="dropdown-menu pull-right">-->
+						<!--<li><a href="#"><i class="icon-edit"></i>修改</a></li>-->
+						<!--<li><a href="{:url('deletekinder',array('id'=>$vo.kid))}"><i class="icon-trash"></i>删除</a></li>-->
+					<!--</ul>-->
+				<!--</div>-->
+			<!--</td>-->
+		<!--</tr>-->
+		<!--</tbody>-->
+		<!--{/volist}-->
+	<!--</table>-->
 </div>
-{/volist}
 </body>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='__STATIC__/assets/js/jquery-2.1.1.min.js'>"+"<"+"/script>");
+</script>
+<script src="__STATIC__/assets/js/bootstrap.min.js"></script>
+
 </html>
