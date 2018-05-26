@@ -31,7 +31,11 @@ class Index EXTENDS Controller
             }else if($result==3){
             $this->redirect('kindergarten/index');
             }else{
-                $this->redirect('KinderAdmin/index');
+                $kinderaccount=Session::get("adminid");
+                $kid=Db::name('幼儿园管理员')->where("kadacc",$kinderaccount)->find();
+                $kadid=$kid['kid'];
+                $this->redirect('KinderAdmin/index',['kid'=>$kadid]);
+                // dump($kid);
                             }        	
         	}
         }
