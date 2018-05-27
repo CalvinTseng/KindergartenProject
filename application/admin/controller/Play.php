@@ -42,9 +42,9 @@ class Play extends BaseController
 		];
 		//存入数据库
 		if(Db::name('游乐场信息')->insert($data)){
-				$this->success('添加视频成功');			
+				$this->success('添加游乐场信息成功');			
 		}else{
-			$this->error('添加视频失败');
+			$this->error('添加添加游乐场信息失败');
 		}
 	}
 	
