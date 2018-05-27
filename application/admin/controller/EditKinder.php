@@ -7,4 +7,11 @@ class EditKinder EXTENDS BaseController
 	{
 	return	$this->fetch();
 	}
+	public function edit()
+	{
+		# code...
+		$cid=input("param.cid");
+		$kinder=Db::name("幼儿园信息")->find($cid);
+		echo json_encode($kinder);
+	}
 }
