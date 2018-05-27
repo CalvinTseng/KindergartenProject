@@ -1,17 +1,25 @@
 <?php
 namespace app\admin\controller;
+use \think\Controller;
+use \think\Db;
+use \think\Session;
 
 class EditKinder EXTENDS BaseController
 {
-	public function index()
+	public function index($kid)
 	{
+		$kinder=Db::name("幼儿园信息")->select($kid);
+		$this->assign('kinder',$kinder);
 	return	$this->fetch();
 	}
-	public function edit()
+	public function edit($kid)
 	{
 		# code...
-		$cid=input("param.cid");
-		$kinder=Db::name("幼儿园信息")->find($cid);
-		echo json_encode($kinder);
+		
+	}
+	public function update()
+	{
+		# code...
+		
 	}
 }
