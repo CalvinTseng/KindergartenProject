@@ -28,7 +28,7 @@ class EditKinder EXTENDS BaseController
 		$address = input("param.address");
 		$data=["kid"=>Session::get("KidForEdit"),"kname"=>$kname,"type"=>$ktype,"kintro"=>$content,"receive"=>$receive,"opendate"=>$opendate,"jd"=>$jd,"wd"=>$wd,"address"=>$address];
 		if(Db::table("幼儿园信息")->update($data)){
-			$this->success("修改成功");
+			$this->redirect('KinderAdmin/index',['kid'=>Session::get("KidForEdit")]);
 		}else{
 			$this->error("修改失败");
 		}
