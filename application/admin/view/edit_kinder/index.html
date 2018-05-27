@@ -13,17 +13,17 @@
 		<option value="1">公立</option>
 		<option value="0">私立</option>
 	</select> 
-	<script id="container" name="content" type="text/plain" value="{$kinder.kintro}">
+	<script id="container" name="content" type="text/plain">
 	</script>
+	<input type="hidden" name="kintro" value="{$kinder.kintro}" id="kintro">
 	<input type="text" name="receive" placeholder="接收条件:" value="{$kinder.receive}"></text><br />
 	<p>开放时间:</p>
-	<input type="date" name="opentime" value="{$kinder.opendate}"><br />
+	<input type="date" name="opendate" value="{$kinder.opendate}"><br />
 	<input type="text" name="jd" placeholder="经度" value="{$kinder.jd}">
 	<input type="text" name="wd" placeholder="纬度" value="{$kinder.wd}"><br />
 	<input type="text" name="address" placeholder="地址" value="{$kinder.address}"><br />
 	<input type="submit" value="提交">
 </form>
-{/volist}
 <!-- 配置文件 -->
     <script type="text/javascript" src="__STATIC__/ueditor/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
@@ -31,6 +31,11 @@
     <!-- 实例化编辑器 -->
     <script type="text/javascript">
         var editor = UE.getEditor('container');
+        editor.ready(function(){
+        	var content = document.getElementById("kintro").value;
+    	editor.setContent(content);    
+})
     </script>
+    {/volist}
 </body>
 </html>
