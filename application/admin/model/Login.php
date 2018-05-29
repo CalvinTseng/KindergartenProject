@@ -49,4 +49,8 @@ class Login extends Model
                 }
                 }
 	}
+    public function logout(){
+        Session::clear();
+        $this->redirect("index/index");
+    }
 }
