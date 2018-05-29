@@ -236,4 +236,13 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+    // 邮箱配置
+             'MAIL_HOST' => 'smtp.qq.com', // smtp服务器的名称     
+             'MAIL_SMTPAUTH' => TRUE, // 启用smtp认证
+             'MAIL_USERNAME' => '1056769938@qq.com', // 发件人的邮箱名
+             'MAIL_PASSWORD' => 'tlegdcwdlnwdbfad', // qq邮箱发件人授权密码
+             'MAIL_FROM' => '1056769938@qq.com', // 发件人邮箱地址
+             'MAIL_FROMNAME' => '视频信息管理系统', // 发件人姓名
+             'MAIL_CHARSET' => 'utf-8', // 设置邮件编码
+             'MAIL_ISHTML' => TRUE,
 ];
