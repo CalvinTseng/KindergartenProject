@@ -187,56 +187,51 @@
 					<h4 class="modal-title">添加游乐场信息</h4>
 				</div>
 				<div class="modal-body">
-			<p>
+
 			<form method="POST" action="{:url('add')}" enctype="multipart/form-data">
 			<div class="form-group">
-				<label for="pname" class="col-md-2 col-xs-2 control-label">游乐场名称</label>
-				<div class="col-md-10 col-xs-10">
-					<input type="text" class="form-control" id="pname"  name="pname" required>
+
+				<div class="col-md-12 col-xs-12">
+					游乐场名称:<input type="text" class="form-control" id="pname"  name="pname" required></br>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label  class="col-md-2 col-xs-2 control-label">游乐场图片</label>
-				<div class="col-md-10 col-xs-10">
+
+				<div class="col-md-12 col-xs-12">
 				<input type="hidden" name="MAX_FILE_SIZE" value="300000">
-					<input type="file" id="exampleInputFile" name="ppic" required>
+					游乐场图片<input type="file" id="exampleInputFile" name="ppic" required></br>
 				</div>
 			</div>
 
 			<div class="form-group">
-				<label  class="col-md-2 col-xs-2 control-label">游乐场简介</label>
-				<div class="col-md-10 col-xs-10">
-					<textarea class="form-control" rows="3" name="pintro" required></textarea>
-				</div>
-			</div>
-			
-			
-			
-			<div class="form-group">
-				<label  class="col-md-2 col-xs-2 control-label">游乐场地址</label>
-				<div class="col-md-10 col-xs-10">
-					<textarea class="form-control" rows="3" name="paddress" required></textarea>
+				<div class="col-md-12 col-xs-12">
+					游乐场简介<input type="text" class="form-control" rows="3" name="pintro" required></br>
 				</div>
 			</div>
 
-			<div class="form-group">
-				<div class="col-xs-offset-2 col-xs-10">
-					<input type="submit" class="btn btn-default" value="添加">
-					<input type="reset" class="btn btn-default" value="重置">
+
+					<div class="form-group">
+				<div class="col-md-12 col-xs-12">
+					游乐场地址<input type="text" class="form-control" rows="3" name="paddress" required></br>
 				</div>
 			</div>
-			</form>
-			</p>
+
+					<div class="modal-footer">
+						<input type="submit" class="btn  btn-primary btn-default" value="添加">
+						<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+					</div>
+
+				</form>
+
+
 		</div>
 
-		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-			<button class="btn btn-primary">Save changes</button>
-		</div>
+
+
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-	
+
 </body>
 </html>
