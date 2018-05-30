@@ -87,7 +87,7 @@
                                         			<span class="caret"></span>
                                         		</a>
                                         		<ul class="dropdown-menu pull-right">
-                                        			<li><a href="#"><i class="icon-edit"></i>修改</a></li>
+                                        			<li><a href="#" data-toggle="modal" data-target="#editModel" onclick="jsedit({$vo.pid})"><i class="icon-edit"></i>修改</a></li>
                                         			<li><a href="{:url('deleteplay',array('id'=>$vo.pid))}"><i class="icon-trash"></i>删除</a></li>
                                         		</ul>
                                         	</div></td>
@@ -223,6 +223,68 @@
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
+	
+		
+	<!--Edit Model-->
+	<div class="modal fade" id="editModel">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+					<h4 class="modal-title">修改游乐场信息</h4>
+				</div>
+				<div class="modal-body">
 
+			<form method="POST" action="{:url('update')}" enctype="multipart/form-data">
+			<input type="hidden" name="pid" id="pid_edit">
+			<div class="form-group">
+
+				<div class="col-md-12 col-xs-12">
+					游乐场名称:<input type="text" class="form-control" placeholder="pname" id="pname_edit"  name="pname" required></br>
+				</div>
+			</div>
+
+			<div class="form-group">
+
+				<div class="col-md-12 col-xs-12">
+				<input type="hidden" name="MAX_FILE_SIZE" value="300000">
+					游乐场图片<input type="file" id="exampleInputFile_edit" name="ppic" required>
+					<input type="hidden" name="ppic2" id="ppic_edit2">
+					<img src="__STATIC__/posters/5b0a850ebe797.jpg" id="ppic_edit" style="width: 100px;"/>
+					</br>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-12 col-xs-12">
+					游乐场简介<input type="text" class="form-control" rows="3" name="pintro" id="pintro_edit" required></br>
+				</div>
+			</div>
+					<div class="form-group">
+				<div class="col-md-12 col-xs-12">
+					游乐场地址<input type="text" class="form-control" rows="3" name="paddress" id="paddress_edit" required></br>
+				</div>
+			</div>
+					<div class="modal-footer">
+						<input type="submit" class="btn  btn-primary btn-default" value="修改">
+						<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+					</div>
+				</form>
+		</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<script>
+		function jsedit(pid){
+			$.getJSON("{:url('edit')}",{"pid":pid},function(json){
+				$("#pname_edit").val(json.pname);
+				$("#pintro_edit").val(json.pintro);
+				$("#paddress_edit").val(json.paddress);
+				$("#ppic_edit").attr("src","__STATIC__/posters/"+json.ppic);
+				$("#pid_edit").val(json.pid);
+				$("#ppic_edit2").val(json.ppic)
+			});
+		}
+	</script>
 </body>
 </html>
