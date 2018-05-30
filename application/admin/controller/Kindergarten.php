@@ -19,6 +19,9 @@ class Kindergarten extends BaseController
 		{
 			$admin=Db::name("幼儿园管理员")->where('kid',$id)->find();
 			Db::name("幼儿园管理员")->delete($admin);
+			Db::name("幼儿早教信息")->where("kid",$id)->delete();
+			Db::name("幼教资讯")->where("kid",$id)->delete();
+			Db::name("院长风采")->where("kid",$id)->delete();
 			$this->success('删除成功');
 		}else $this->error('删除失败');
 	}
@@ -40,10 +43,12 @@ class Kindergarten extends BaseController
 				$kinder=Db::name("幼儿园信息")->where('kname',$kindername)->select();
 			// dump($kinder[0]['kid']);
 				$kinderadmindata=["kid"=>$kinder[0]['kid'],"kadacc"=>$kinderadminname,"kadpass"=>md5($kinderadminpass),"email"=>$kinderadminemail];
-				if(Db::name("幼儿园管理员")->insert($kinderadmindata)){
+				$president=["kid"=>$kinder[0]['kid']];
+				if(Db::name("幼儿园管理员")->insert($kinderadmindata) && Db::name("院长风采")->insert($president) ){
 					$this->success("添加用户成功",'Kindergarten/index');
 				}else{
 					$kinder=Db::name("幼儿园信息")->where('kname',$kindername)->delete();
+					Db::name("院长风采")->where("kid",$kinder[0]['kid'])->delete();
 					$this->error("添加用户失败");}
 				}else{
 					$this->error("添加用户失败");
