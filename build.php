@@ -16,8 +16,8 @@ return [
     'admin'     => [
         '__file__'   => ['common.php'],
         '__dir__'    => ['behavior', 'controller', 'model', 'view'],
-        'controller' => ['Index', 'Kindergarten', 'PlayGround','Gallery','Play','KinderAdmin','EditKinder'],
-        'model'      => ['Kindergarten', 'PlayGround','Gallery','Play','KinderAdmin','EditKinder'],
+        'controller' => ['Index', 'Kindergarten', 'Gallery','Play','KinderAdmin','EditKinder','President','Course','News'],
+        'model'      => ['Kindergarten', 'Gallery','Play','KinderAdmin','EditKinder','President','Course','News'],
         'view'       => ['index/index'],
     ],
 ];

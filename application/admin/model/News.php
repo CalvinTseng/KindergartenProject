@@ -3,7 +3,7 @@ namespace app\admin\model;
 
 use think\Model;
 
-class PlayGround extends Model
+class News extends Model
 {
 
 }

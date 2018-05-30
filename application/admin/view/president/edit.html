@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{volist name="president" id="president"}
+<form method="post" action="{:url('update')}" enctype="multipart/form-data">
+	<input type="hidden" name="cid" id="cida" >
+		<p>园长姓名: </p>
+	<input type="text" name="presidentname" placeholder="院长姓名" value="{$president.yname}">
+	<p>园长介绍: </p>
+	<script id="container" name="content" type="text/plain">
+	</script>
+	<div id="presidentintro" style="display: none;">{$president.yintro}</div>
+	<input type="submit" value="提交">
+</form>
+<!-- 配置文件 -->
+    <script type="text/javascript" src="__STATIC__/ueditor/ueditor.config.js"></script>
+    <!-- 编辑器源码文件 -->
+    <script type="text/javascript" src="__STATIC__/ueditor/ueditor.all.js"></script>
+    <!-- 实例化编辑器 -->
+    <script type="text/javascript">
+        var editor = UE.getEditor('container');
+        editor.ready(function(){
+        var content = document.getElementById("presidentintro").innerHTML;
+    	editor.setContent(content);    
+});
+    </script>
+    {/volist}
+</body>
+</html>
