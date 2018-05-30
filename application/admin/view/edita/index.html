@@ -78,9 +78,7 @@
                 操作
             </a>
             <ul class="dropdown-menu pull-right">
-                <!--<li><a href="{:url('EditKinder/index',['kid'=>$vo.kid])}"><i class="icon-edit"></i>修改</a></li>-->
-                <!--<li><a href="{:url('EditKinder/index',['kid'=>$vo.kid])}"><i class="icon-edit"></i>院长风采</a></li>-->
-                <!--<li><a href="{:url('deletekinder',array('id'=>$vo.kid))}"><i class="icon-trash"></i>删除</a></li>-->
+                <li><a href="{:url('EditKinder/index',['kid'=>$vo.kid])}"><i class="icon-edit"></i>修改</a></li>
             </ul>
         </div>
     </div>
@@ -90,6 +88,22 @@
         </div>
         <div class="col-md-7" style="text-align: center;border-bottom: 5px solid forestgreen;border-right: 5px solid forestgreen;background-color: white">
             {$vo.yintro}
+        </div>
+    </div>
+    <div class="row" style="">
+        <div class="col-md-3" style="text-align: center;border-bottom: 5px solid forestgreen;border-left: 5px solid forestgreen;border-right: 5px solid forestgreen;background-color: white">
+            院长理念
+        </div>
+        <div class="col-md-7" style="text-align: center;border-bottom: 5px solid forestgreen;border-right: 5px solid forestgreen;background-color: white">
+            {$vo.ytheme}
+        </div>
+    </div>
+    <div class="row" style="">
+        <div class="col-md-3" style="text-align: center;border-bottom: 5px solid forestgreen;border-left: 5px solid forestgreen;border-right: 5px solid forestgreen;background-color: white">
+            院长名言
+        </div>
+        <div class="col-md-7" style="text-align: center;border-bottom: 5px solid forestgreen;border-right: 5px solid forestgreen;background-color: white">
+            {$vo.ywords}
         </div>
     </div>
     {/volist}
