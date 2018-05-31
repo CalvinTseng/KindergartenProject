@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+{volist name="news" id="news"}
+<form method="post" action="{:url('update')}" enctype="multipart/form-data">
+    <input type="hidden" name="nid" id="nida" >
+    <input type="hidden" name="nhittimes" value="{$news.nhittimes}">
+    <p>标题: </p>
+    <input type="text" name="ntitle" placeholder="课程名" value="{$news.ntitle}">
+    <p>文章: </p>
+    <script id="container" name="content" type="text/plain">
+    </script>
+    <div id="narticle" style="display: none;">{$news.narticle}</div>
+    <input type="submit" value="提交">
+</form>
+<!-- 配置文件 -->
+<script type="text/javascript" src="__STATIC__/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="__STATIC__/ueditor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var editor = UE.getEditor('container');
+    editor.ready(function(){
+        var content = document.getElementById("narticle").innerHTML;
+        editor.setContent(content);
+    });
+</script>
+{/volist}
+</body>
+</html>

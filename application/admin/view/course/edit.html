@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title></title>
 </head>
 <body>
 {volist name="course" id="course"}
 <form method="post" action="{:url('update')}" enctype="multipart/form-data">
-	<input type="hidden" name="cid" id="cida" >
-	<p>课程名: </p>
-	<input type="text" name="coursename" placeholder="课程名" value="{$course.cname}">
-	<p>课程名: </p>
-	<input type="text" name="courseprice" placeholder="课程价格" value="{$course.cprice}">
-	<p>课程介绍: </p>
-	<script id="container" name="content" type="text/plain">
-	</script>
-	<div id="courseintro" style="display: none;">{$course.cintro}</div>
-	<input type="submit" value="提交">
+    <input type="hidden" name="cid" id="cida" >
+    <p>课程名: </p>
+    <input type="text" name="coursename" placeholder="课程名" value="{$course.cname}">
+    <p>课程名: </p>
+    <input type="text" name="courseprice" placeholder="课程价格" value="{$course.cprice}">
+    <p>课程介绍: </p>
+    <script id="container" name="content" type="text/plain">
+    </script>
+    <div id="courseintro" style="display: none;">{$course.cintro}</div>
+    <input type="submit" value="提交">
 </form>
 <!-- 配置文件 -->
 <script type="text/javascript" src="__STATIC__/ueditor/ueditor.config.js"></script>
