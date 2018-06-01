@@ -11,11 +11,15 @@ class President EXTENDS BaseController
 
 		$president=Db::name("院长风采")->where("kid",$kid)->select();
 		$this->assign('president',$president);
+            Session::set('yid',$president[0]['yid']);
+                    dump(Session::get("yid"));
+
 		return	$this->fetch();
 	}
-	public function edit($kid)
+	public function edit($yid)
 	{
-		$president=Db::name("院长风采")->where("kid",$kid)->select();
+		$president=Db::name("院长风采")->select($yid);
+    // dump($president);
 		$this->assign('president',$president);
 		return 	$this->fetch();
 	}
@@ -27,7 +31,7 @@ class President EXTENDS BaseController
            $yname=input("param.presidentname");
            $content = input('post.content');
            $yid=Db::name("院长风采")->where("kid",Session::get("KidForEdit"))->find();
-           $data=["yid"=>$yid['yid'],"yname"=>$yname,"kid"=>Session::get("KidForEdit"),"yintro"=>$content];
+           $data=["yid"=>Session::get("yid"),"yname"=>$yname,"kid"=>Session::get("KidForEdit"),"yintro"=>$content];
            if(Db::table("院长风采")->update($data)){
                $this->redirect('President/index',['kid'=>Session::get("KidForEdit")]);
            }else{
