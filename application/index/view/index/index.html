@@ -108,16 +108,13 @@
 						</div>
 						
 						<!--第一部分右面的上面-->
-						<div class="col-5 offset-1" style="margin-top: 20px;height: 40%;">
-							<img src="img/250.png" style="width: 100%;border-radius: 15px;" >
+						<div class="col-6 offset-0" style="margin-top: 20px;height: 40%;">
+							<img src="__STATIC__/admin/images/250.png" style="width: 100%;border-radius: 15px;" >
 							<div style="border-radius: 15px;border: 2px solid white;margin-top: 10px;">
 								<ul style="padding: 0px;">
-									<li style="list-style: none;font-size: 32px;text-align: center;">杨氏幼儿园</li>
-									<li style="list-style: none;font-size: 32px;text-align: center;">杨氏幼儿园</li>
-									<li style="list-style: none;font-size: 32px;text-align: center;">杨氏幼儿园</li>
-									<li style="list-style: none;font-size: 32px;text-align: center;">杨氏幼儿园</li>
-									<li style="list-style: none;font-size: 32px;text-align: center;">杨氏幼儿园</li>
-									<li style="list-style: none;font-size: 32px;text-align: center;">杨氏幼儿园</li>
+									{volist name="ninder" id="vo"}
+									<li style="list-style: none;font-size: 16px;text-align: center;">{$vo.ntitle}{$vo.narticle}</li>
+									{/volist}									
 								</ul>
 							</div>
 
