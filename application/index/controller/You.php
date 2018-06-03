@@ -6,8 +6,10 @@ use \think\Db;
 
 class You extends Controller
 {
-    public function index()
+    public function index($kid)
     {
+    	$aa = Db::name('幼儿园信息')->find($kid);
+    	$this->assign('kcon',$aa);
     	return $this->fetch();
       }
 }

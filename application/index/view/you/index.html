@@ -82,9 +82,13 @@
 						</div>
 						<div class="col-4" style="margin-top: 20px;">
 							<ul id="center">
-								<li>杨氏幼儿园</li>
-								<li>大连东软信息学院</li>
-								<li><a href="{:url('yuan/index')}">院长风采</a></li>
+								<li>幼儿园名字:{$kcon.kname}</li>
+								<li>招生条件:{$kcon.receive}</li>
+								<li>开学时间:{$kcon.opendate}</li>
+								<li>经度:{$kcon.jd}</li>
+								<li>纬度:{$kcon.wd}</li>
+								<li>学校地址:{$kcon.address}</li>
+								<li><a href="{:url('yuan/index',['kid'=>$kcon.kid])}">院长风采</a></li>
 							</ul>
 						</div>
 					</div>
