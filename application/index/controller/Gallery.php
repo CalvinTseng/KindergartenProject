@@ -4,7 +4,7 @@ namespace app\index\controller;
 use \think\Controller;
 use \think\Db;
 
-class Index extends Controller
+class Gallery extends Controller
 {
     public function index()
     {

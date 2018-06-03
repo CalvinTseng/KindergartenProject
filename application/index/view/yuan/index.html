@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-image: url(__STATIC__/admin/images/all1.jpg);
+        }
+        #nav li a{
+            color: white;
+        }
+        #nav li a:hover{
+            color: orange;
+        }
+        #center li{
+            list-style: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<!--导航栏-->
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2" style="margin-top: 8%;">
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark" style="border-radius: 20px;">
+                <!-- Links -->
+                <ul class="navbar-nav" id="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">网站首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">招生招聘</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">教学信息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">家园互动</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="keyan.html">教育科研</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">早教信息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">院长风采</a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            查看更多
+                        </a>
+                        <div class="dropdown-menu" style="border-radius: 10px;">
+                            <a class="dropdown-item" href="{:url('gallery/index')}" style="color: black;">精彩图片</a>
+                            <a class="dropdown-item" href="#" style="color: black;">精彩活动</a>
+                            <a class="dropdown-item" href="#" style="color: black;">精彩赛事</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<!--展示框-->
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-8 offset-2" style="border-radius: 20px;border: 5px solid white;background-image: url(__STATIC__/admin/images/ground2.png);">
+            <!--左面图片,右面名字等信息-->
+            <div class="row">
+                <div class="col-6 offset-1" style="height: 250px;">
+                    <img src="__STATIC__/admin/images/ground2.png" style="width: 100%;height: 100%;"/>
+                </div>
+                <div class="col-4" style="margin-top: 20px;">
+                    <ul id="center">
+                        <li>院长名字</li>
+                        <li>院长信息</li>
+                        <li>院长名言</li>
+                    </ul>
+                </div>
+            </div>
+            <!--简介-->
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-10 offset-1">
+                    <ul id="center">
+                        <li>院长其他信息</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--footer-->
+<div class="container-fluid" style="background-color: whitesmoke;position: absolute;bottom: 0px;padding: 0px;">
+    <p style="color: black;text-align: center;">大连市杨氏幼儿园</p>
+    <p style="color: black;text-align: center;">17615128718</p>
+    <p style="color: black;text-align: center;">辽宁省大连市甘井子区软件园8号</p>
+    <p style="color: black;text-align: center;">CopyRight2007-2018 服务支持：无忧幼儿园网 All Rights Reserved 辽ICP备12004948号 建议IE8.0以上1024*768分辨率浏览</p>
+</div>
+</body>
+</html>
