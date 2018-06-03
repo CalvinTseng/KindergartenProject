@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>幼儿早教信息</title>        
+        
+        <!-- Import google fonts - Heading first/ text second -->
+        <!-- <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' /> -->
+        <!--[if lt IE 9]>
+<link href="http://fonts.useso.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+<link href="http://fonts.useso.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+<link href="http://fonts.useso.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+<link href="http://fonts.useso.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="__STATIC__/assets/ico/favicon.ico" type="image/x-icon" />
+
+        <!-- Css files -->
+        <link href="__STATIC__/assets/css/bootstrap.min.css" rel="stylesheet">      
+        <link href="__STATIC__/assets/css/jquery.mmenu.css" rel="stylesheet">       
+        <link href="__STATIC__/assets/css/font-awesome.min.css" rel="stylesheet">
+        <link href="__STATIC__/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+        <link href="__STATIC__/assets/css/style.min.css" rel="stylesheet">
+        <link href="__STATIC__/assets/css/add-ons.min.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+</head>
+
+<body>
+
+<form method="post" action="{:url('doAddCourse')}" enctype="multipart/form-data">
+    <input type="hidden" name="cid" id="cida" >
+    <p>课程名: </p>
+    <input type="text" name="cname" placeholder="课程名">
+    <p>课程价格: </p>
+    <input type="text" name="cprice" placeholder="课程价格">
+    <p>课程介绍: </p>
+    <script id="container" name="cintro" type="text/plain">
+    </script>
+    <div id="courseintro" style="display: none;"></div>
+    <input type="submit" value="添加">
+</form>
+<!-- 配置文件 -->
+<script type="text/javascript" src="__STATIC__/ueditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="__STATIC__/ueditor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var editor = UE.getEditor('container');
+    editor.ready(function(){
+        var content = document.getElementById("courseintro").innerHTML;
+        editor.setContent(content);
+    });
+</script>
+
+</body>
+</html>

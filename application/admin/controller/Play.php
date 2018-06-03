@@ -32,7 +32,7 @@ class Play extends BaseController
 		
 		
 		//获取表单数据
-//		$pname=input('pname');
+		//		$pname=input('pname');
 		$data=[
 			'pname'=>input('pname'),
 			'pintro'=>input('pintro'),
