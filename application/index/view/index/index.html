@@ -136,7 +136,9 @@
 						</div>
 						<div class="col-6" style="margin-top: 20px;">
 							<ul>
-								<a href="{:url('you/index')}"><li id="you" style="color: white;list-style: none;">幼儿园</li></a>								
+								{volist name="kinder" id="vo"}
+								<li style="color: white;list-style: none;">{$vo.kname}</li>
+								{/volist}
 							</ul>
 						</div>
 					</div>
@@ -153,7 +155,9 @@
 						</div>
 						<div class="col-6" style="margin-top: 20px;">
 							<ul>
-								<li style="color: white;list-style: none;">游乐场</li>
+								{volist name="kinder" id="vo"}
+								<li style="color: white;list-style: none;">{$vo.kname}</li>
+								{/volist}
 							</ul>
 						</div>
 					</div>
