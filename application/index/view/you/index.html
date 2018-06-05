@@ -88,8 +88,7 @@
 								<li>经度:{$kcon.jd}</li>
 								<li>纬度:{$kcon.wd}</li>
 								<li>学校地址:{$kcon.address}</li>
-								<li><a href="{:url('yuan/index',['kid'=>$kcon.kid])}">院长风采</a></li>
-								<li>学校介绍:{$kcon.kintro}</li>
+								<li><a href="{:url('yuan/index',['kid'=>$kcon.kid])}">院长风采</a></li>							
 							</ul>
 						</div>
 					</div>
@@ -97,18 +96,60 @@
 					<div class="row" style="margin-top: 30px;">
 						<div class="col-10 offset-1">
 							<ul id="center">
-								<li>课程</li>
+								<li>学校介绍:{$kcon.kintro}</li>
 							</ul>
 						</div>						
 					</div>
 				</div>
 			</div>
+			<!--留言-->
+			
+			
 		</div>
 		
+		<!--留言-->
+		<form method="post" action="{:url('liuyan')}">
 		
-		
+			<div class="row" style="margin-top: 30px;">
+				<div class="col-10 offset-1" style="border-radius: 20px;border: 5px solid white;background-image: url(__STATIC__/admin/images/ground2.png);">
+					<input type="hidden" name="kid" value="{$kcon.kid}" />
+					<div class="col-10 offset-1" style="margin-top: 20px;">
+						{volist name="kcon1" id="vo"}
+							<ul id="center">
+								<ul style="border: 3px solid black;border-radius: 20px;">
+									<li style="display: inline;">留言内容:{$vo.codetail}</li>		
+									<li style="display: inline;">留言时间:{$vo.codata}</li>
+									<li style="direction: inline;margin-left: 75%;"><a href="{:url('You/jubao',['juid'=>$vo.coid])}">举报</a></li>
+								</ul>
+							</ul>
+						{/volist}	
+					</div>
+					<div class="row">
+						<div class="col-10 offset-1" style="border-radius: 20px;border: 2px solid black;height: 240px;">
+							<div>
+								<!-- 编辑器 --><script id="container" name="content" type="text/plain"></script>
+							</div>
+								<!-- 配置文件 -->
+							<script type="text/javascript" src="__STATIC__/ueditor/ueditor.config.js"></script>
+							<!-- 编辑器源码文件 -->
+							<script type="text/javascript" src="__STATIC__/ueditor/ueditor.all.js"></script>
+							<!-- 实例化编辑器 -->
+							<script type="text/javascript">
+							// $(document).ready(function() {
+							var ue = UE.getEditor('container');
+							// };
+							</script>
+
+						</div>
+						<button style="margin-left: 85%;">发表留言</button>
+					</div>
+					
+				</div>
+				
+			</div>
+		</form>
 		<!--footer-->
-		<div class="container-fluid" style="background-color: whitesmoke;position: absolute;bottom: 0px;padding: 0px;">
+		<div class="container-fluid" style="background-color: whitesmoke;padding: 0px;">
 			<p style="color: black;text-align: center;">大连市杨氏幼儿园</p>
 			<p style="color: black;text-align: center;">17615128718</p>
 			<p style="color: black;text-align: center;">辽宁省大连市甘井子区软件园8号</p>
