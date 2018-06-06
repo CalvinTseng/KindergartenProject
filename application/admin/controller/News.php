@@ -50,7 +50,7 @@ class News EXTENDS BaseController
 		];
 		//存入数据库
 		if(Db::name('幼教资讯')->insert($data)){
-				$this->success('添加幼教资讯成功');			
+				$this->redirect('News/index',['kid'=>Session::get("KidForEdit")]);			
 		}else{
 			$this->error('添加幼教资讯失败');
 		}
