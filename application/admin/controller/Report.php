@@ -9,7 +9,7 @@ class report EXTENDS BaseController
 	public function index()
 	{
 		$report=Db::name('举报')->select();
-		this->assign('report',$report);
+		$this->assign('report',$report);
 		return $this->fetch();
 	}
 }

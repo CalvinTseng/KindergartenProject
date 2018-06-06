@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Import google fonts - Heading first/ text second -->
+    <!-- <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' /> -->
+    <!--[if lt IE 9]>
+    <link href="http://fonts.useso.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.useso.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.useso.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.useso.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <!-- Favicon and touch icons -->
+    <link rel="shortcut icon" href="__STATIC__/assets/ico/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <!-- Css files -->
+    <link href="__STATIC__/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STATIC__/assets/css/jquery.mmenu.css" rel="stylesheet">
+    <link href="__STATIC__/assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="__STATIC__/assets/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <link href="__STATIC__/assets/css/style.min.css" rel="stylesheet">
+    <link href="__STATIC__/assets/css/add-ons.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        body{
+            /*background: url("__STATIC__/assets/img/gallery/timg.jpg");*/
+            background-color: whitesmoke;
+        }
+        th{
+            text-align: center;
+        }
+        td{
+            text-align: center;
+        }
+        div{
+            line-height: 120px;
+            font-size: 20px;
+            color: #0000cc;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid" style="background-color: white;height: 80px">
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown visible-md visible-lg">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img class="user-avatar" style="height: 50px" src="__STATIC__/assets/img/avatar.jpg" alt="user-mail">任逸是我儿</a>
+        </li>
+    </ul>
+</div>
+
+<div class="container" style="margin-top: 25px">
+    {volist name="report" id="vo"}
+    <div class="row" style="height: 120px">
+        <div class="col-md-3" style="text-align: center;border: 5px solid forestgreen;background-color: white">
+            举报id
+        </div>
+        <div class="col-md-7" style="text-align: center;border-bottom: 5px solid forestgreen;border-right: 5px solid forestgreen;border-top: 5px solid forestgreen;background-color: white">
+            {$vo.jbid}
+        </div>
+        <div class="col-md-2">
+            <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#" style="color: #0000cc;font-size: 50px">
+                操作
+            </a>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="#"><i class="icon-edit"></i>忽略</a></li>
+                <li><a href="#"><i class="icon-edit"></i>删除</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row" style="">
+        <div class="col-md-3" style="text-align: center;border-bottom: 5px solid forestgreen;border-left: 5px solid forestgreen;border-right: 5px solid forestgreen;background-color: white">
+            举报内容
+        </div>
+        <div class="col-md-7" style="text-align: center;border-bottom: 5px solid forestgreen;border-right: 5px solid forestgreen;background-color: white">
+            {$vo.jbcon}
+        </div>
+    </div>
+
+    {/volist}
+</div>
+</body>
+<script type="text/javascript">
+    window.jQuery || document.write("<script src='__STATIC__/assets/js/jquery-2.1.1.min.js'>"+"<"+"/script>");
+</script>
+<script src="__STATIC__/assets/js/bootstrap.min.js"></script>
+
+</html>
