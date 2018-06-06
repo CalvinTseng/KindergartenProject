@@ -36,7 +36,7 @@
     <h1>文件管理</h1>
     <form action='test.php?a=creat' enctype="multipart/form-data" method='post'>
         文件：<input type='file' name='filename' />
-        <input type='submit' value='新建' />
+        <input type='submit' value='添加' />
     </form>
     <table border='1' width='900' cellpadding='5' cellspacing='0'>
         <tr>
@@ -64,7 +64,6 @@
         echo "<td>".filesize($file)."</td>";
         echo "<td>".filectime($file)."</td>";
         echo "<td align='center'>
-            <a href='test.php?a=edit&filename={$file}'>修改</a>|
             <a href='test.php?a=del&filename={$file}'>删除</a>
         </td>";
     echo "</tr>";
