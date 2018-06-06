@@ -6,6 +6,7 @@ use \think\Session;
 
 class Course EXTENDS BaseController
 {
+
 	public function index($kid)
 	{
 		$course=Db::name("幼儿早教信息")->where("kid",$kid)->select();
@@ -42,7 +43,7 @@ class Course EXTENDS BaseController
 		];
 		//存入数据库
 		if(Db::name('幼儿早教信息')->insert($data)){
-				$this->success('添加幼儿早教信息成功');			
+				$this->redirect('Course/index',['kid'=>Session::get("KidForEdit")]);			
 		}else{
 			$this->error('添加幼儿早教信息失败');
 		}
@@ -67,6 +68,17 @@ class Course EXTENDS BaseController
             }else{
                 $this->error("修改失败");
             }
+        }
+    }
+
+    public function delete($cid){
+        if(Db::name('幼儿早教信息')->delete($cid))
+        {
+            $this->success('删除成功');
+        }
+        else
+        {
+            $this->error('删除失败');
         }
     }
 }
