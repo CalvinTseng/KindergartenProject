@@ -102,12 +102,12 @@
 			{$vo.cprice}
 		</div>
 	</div>
-<div class="col-md-2">
+	{/volist}
+	<div class="col-md-2">
 			<ul>
-				<li><a href="{:url('addCourse',['kid'=>$vo.kid])}"><i class="icon-edit"></i>添加</a></li>
+				<li><a href="{:url('addCourse')}"><i class="icon-edit"></i>添加</a></li>
 			</ul>
 		</div>
-	{/volist}
 </div>
 </body>
 <script type="text/javascript">

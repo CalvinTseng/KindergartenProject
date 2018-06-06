@@ -82,7 +82,7 @@
 			</a>
 			<ul class="dropdown-menu pull-right">
 				<li><a href="{:url('edit',['kid'=>$vo.kid])}"><i class="icon-edit"></i>修改</a></li>
-				<li><a href="#"><i class="icon-edit"></i>删除</a></li>
+				<li><a href="{:url('delete',['nid'=>$vo.nid])}"><i class="icon-edit"></i>删除</a></li>
 			</ul>
 			<!--<a class="btn btn-small"  href="{url:('kinderAdmin/index',['kid'=>$president[0]['kid'])}" style="color: #0000cc;font-size: 50px">-->
 			<!--返回-->
@@ -113,12 +113,13 @@
 			{$vo.nhittimes}
 		</div>
 	</div>
-<div class="col-md-2">
+
+	{/volist}
+	<div class="col-md-2">
 			<ul>
-				<li><a href="{:url('addNews',['kid'=>$vo.kid])}"><i class="icon-edit"></i>添加</a></li>
+				<li><a href="{:url('addNews')}"><i class="icon-edit"></i>添加</a></li>
 			</ul>
 		</div>
-	{/volist}
 </div>
 </body>
 <script type="text/javascript">

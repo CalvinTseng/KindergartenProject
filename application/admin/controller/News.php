@@ -72,4 +72,14 @@ class News EXTENDS BaseController
             }
         }
     }
+    public function delete($nid){
+        if(Db::name('幼教资讯')->delete($nid))
+        {
+            $this->success('删除成功');
+        }
+        else
+        {
+            $this->error('删除失败');
+        }
+    }
 }
