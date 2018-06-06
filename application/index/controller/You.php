@@ -9,7 +9,7 @@ class You extends Controller
     public function index($kid)
     {
     	$aa = Db::name('幼儿园信息')->find($kid);
-    	$bb = Db::name('留言')->select();
+    	$bb = Db::name('留言')->where('kid',$kid)->select();
     	$this->assign('kcon',$aa);
     	$this->assign('kcon1',$bb);
     	return $this->fetch();
