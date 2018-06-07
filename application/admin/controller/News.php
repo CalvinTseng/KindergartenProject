@@ -66,7 +66,7 @@ class News EXTENDS BaseController
             $yid=Db::name("幼教资讯")->where("kid",Session::get("KidForEdit"))->find();
             $data=["nid"=>$yid['nid'],"ntitle"=>$ntitle,"kid"=>Session::get("KidForEdit"),"narticle"=>$content,"nhittimes"=>$nhittimes,"npic"=>"1.jpg"];
             if(Db::table("幼教资讯")->update($data)){
-                $this->redirect('Course/index',['kid'=>Session::get("KidForEdit")]);
+                $this->redirect('News/index',['kid'=>Session::get("KidForEdit")]);
             }else{
                 $this->error("修改失败");
             }
